@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
 <html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Třída</title>
+    <title>Detail třídy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
 <main class="container">
     <h1>Detail třídy</h1>
-    <table class="u-full-width">
+    <table class="table table-striped">
         <thead>
         <tr>
-            <th th:text="${detail.nazev}">Název Třídy</th>
+            <th>Třída:</th>
+        </tr>
+        <tr>
+            <td th:text="${detail.nazev}">Třída</td>
+        </tr>
+        <tr>
+            <th>Třídní učitel:</th>
+        </tr>
+        <tr>
+            <td th:text="${detail.tridniUcitel.celeJmeno()}">Třída</td>
         </tr>
         </thead>
-
         <tbody>
-        <tr>
-            <td th:text="${detail.tridniUcitel}"></td>
-        </tr>
         <tr th:each="detailTridy: ${detail.studenti}">
             <td>
                 <a th:href="@{/student/{idStudent}(idStudent=${detailTridy.id})}"
-                   th:text="${detailTridy.toString()}">
+                   th:text="${detailTridy.celeJmeno()}">
                 </a>
             </td>
         </tr>
         </tbody>
     </table>
+    <a class="btn btn-primary" href="/" role="button">Seznam tříd</a>
 </main>
 </body>
 </html>

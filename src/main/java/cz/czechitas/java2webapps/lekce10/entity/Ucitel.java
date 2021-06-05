@@ -52,6 +52,10 @@ public class Ucitel {
     this.trida = trida;
   }
 
+  public String celeJmeno(){
+    return getJmeno()+" "+getPrijmeni();
+  }
+
   @Override
   public String toString() {
     return String.format("%s %s [%d]", jmeno, prijmeni, id);
