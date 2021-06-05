@@ -29,5 +29,11 @@ public class TridaController {
         return result;
     }
 
+    @GetMapping("/student/{id:[0-9]+}")
+    public ModelAndView student(@PathVariable Integer id){
+        ModelAndView result = new ModelAndView("student");
+        result.addObject("student",tridaService.najdiStudenta(id));
+        return result;
+    }
 
 }
