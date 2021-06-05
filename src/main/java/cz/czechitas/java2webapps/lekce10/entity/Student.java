@@ -26,6 +26,7 @@ public class Student {
 
   @ManyToOne
   private Trida trida;
+  //@JoinColum si generuje samo
 
   public Integer getId() {
     return id;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Třídy</title>
+</head>
+<body>
+<main class="container">
+    <h1>Detail třídy</h1>
+    <table class="u-full-width">
+        <thead>
+        <tr>
+            <th th:text="${detail.nazev}">Název Třídy</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td th:text="${detail.tridniUcitel}"></td>
+        </tr>
+        <tr th:each="detailTridy: ${detail.studenti}">
+            <td>
+                <a th:href="@{/student/{idStudent}(idStudent=${detailTridy.id})}"
+                   th:text="${detailTridy.toString()}">
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

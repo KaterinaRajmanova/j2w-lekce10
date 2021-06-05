@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seznam Tříd</title>
+</head>
+<body>
+<main class="container">
+    <h1>Seznam Tříd</h1>
+    <table class="u-full-width">
+        <thead>
+        <tr>
+            <th>Název Třídy</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tridy: ${seznam}">
+            <td>
+                <a th:href="@{/{idTridy}(idTridy=${tridy.id})}"
+                   th:text="${tridy.nazev}">trida>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>
