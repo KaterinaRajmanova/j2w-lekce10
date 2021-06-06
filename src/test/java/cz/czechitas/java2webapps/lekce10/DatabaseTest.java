@@ -121,4 +121,13 @@ public class DatabaseTest {
     }
     assertEquals(2, deti.size());
   }
+
+  @Test
+  @Transactional
+  void pocetDetiVeTride(){
+    Trida trida= tridaRepository.getOne((short)11);
+    logger.debug("Třída s ID=11: {}", trida);
+
+    assertEquals(10, trida.getStudenti().size());
+  }
 }
